@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel  
-            Background="MediumPurple"
+            Background="DarkBlue"
             Margin="20 10">
             <DockPanel Grid.Row="0">
                 <Image
@@ -38,7 +38,7 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="1" Margin="0 15 0 0">
             <DockPanel>
                 <ComboBox 
                     x:Name="FilterComboBox"
@@ -134,7 +134,7 @@
                 <Button 
                 x:Name="EmpAddButton"
                 Grid.Row="2"
-                Background="MediumPurple"
+                Background="DarkBlue"
                 Margin="0 2"
                 Width="250"
                 Content="Добавить сотрудника"
@@ -145,7 +145,7 @@
                 <Button 
                 x:Name="EmpDelButton"
                 Grid.Row="2"
-                Background="MediumPurple"
+                Background="DarkBlue"
                 Margin="20 2"
                 Width="250"
                 Content="Удалить сотрудника"

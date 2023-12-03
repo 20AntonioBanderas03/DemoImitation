@@ -23,7 +23,7 @@
         <Style TargetType="TextBox">
             <Setter Property="Height" Value="30"/>
             <Setter Property="Width" Value="200"/>
-            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontSize" Value="20"/>
         </Style>
 
         <Style TargetType="Button">
@@ -31,6 +31,7 @@
             <Setter Property="Width" Value="200"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="Margin" Value="5 0"/>
+            <Setter Property="Background" Value="DarkBlue"/>
         </Style>
 
     </Window.Resources>
@@ -43,7 +44,7 @@
         </Grid.RowDefinitions>
 
         <Grid  
-            Background="MediumPurple"
+            Background="DarkBlue"
             Margin="20,10,20,10">
             <DockPanel 
                 Grid.Row="0"
@@ -68,33 +69,50 @@
             Grid.Row="1"
             Margin="20,0,20,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition Width="0.65*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+
+            <Label 
+                x:Name="TitleLabel" 
+                Grid.ColumnSpan="3"    
+                Content="Добавление сотрудника"
+                FontSize="22"
+                Margin="0"
+                Foreground="White"/>
+
             <StackPanel 
+                    Grid.Column="1"
+                    Margin="0 40 0 0"
                     Orientation="Vertical">
                 
-                <StackPanel Orientation="Horizontal">
-                    <Label x:Name="TitleLabel" Content="Добавление сотрудника"
-                           FontSize="22"
-                           Margin="0"
-                           Foreground="White"/>
-                </StackPanel>
-                
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Id:"/>
-                    <TextBox x:Name="EmpIdTextBox" IsReadOnly="True"/>
+                <StackPanel Orientation="Horizontal" Margin="0 7 0 0">
+                    <TextBox x:Name="EmpIdTextBox" Width="70" IsReadOnly="True"/>
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="Name:"/>
+                <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
                     <TextBox x:Name="EmpNameTextBox"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel 
+                    Margin="0 40 0 0"
+                    Orientation="Vertical">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Id:"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label Content="Name:"/>
                 </StackPanel>
 
 
             </StackPanel>
+
             <StackPanel Name="Stack"
-                Grid.Column="1"
+                Grid.Column="2"
                 Orientation="Horizontal"
                 HorizontalAlignment="Right">
                 <Label 
@@ -122,21 +140,21 @@
                 
                 DockPanel.Dock="Left"
                 Foreground="White"
-                Background="MediumPurple" Click="SaveEmployeeButton_Click" IsDefault="True"/>
+                Background="DarkBlue" Click="SaveEmployeeButton_Click" IsDefault="True"/>
 
             <Button 
                 x:Name="LoadImageButton" 
                 Content="Загрузить фото"
                 DockPanel.Dock="Right"
                 Foreground="White"
-                Background="MediumPurple" Click="LoadImageButton_Click"/>
+                Click="LoadImageButton_Click"/>
 
             <Button 
                 x:Name="DeleteImageButton" 
                 Content="Удалить фото"
                 Width="Auto"
                 Foreground="White"
-                Background="MediumPurple" Click="DeleteImageButton_Click" />
+                Click="DeleteImageButton_Click" />
         </DockPanel>
     </Grid>
 </Window>
