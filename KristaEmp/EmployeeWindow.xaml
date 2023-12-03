@@ -119,9 +119,10 @@
             <Button 
                 x:Name="SaveEmployeeButton" 
                 Content="Сохранить"
+                
                 DockPanel.Dock="Left"
                 Foreground="White"
-                Background="MediumPurple" Click="SaveEmployeeButton_Click"/>
+                Background="MediumPurple" Click="SaveEmployeeButton_Click" IsDefault="True"/>
 
             <Button 
                 x:Name="LoadImageButton" 
