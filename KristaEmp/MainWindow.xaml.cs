@@ -240,5 +240,4 @@ namespace KristaEmp
                 EmpDelButton.Content = ((string)EmpDelButton.Content).Replace("сотрудников", "сотрудника");
         }
     }
-
 }
