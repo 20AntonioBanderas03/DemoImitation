@@ -47,14 +47,23 @@ namespace KristaEmp
             _curEmp.ImgPath = _imgName;
 
             Core.GetContext().Employee.AddOrUpdate(_curEmp);
-            
-            Core.GetContext().SaveChanges();
+
+            try 
+            {
+                Core.GetContext().SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Произошла ошибка...\n{ex.Message}","Ошибка!!!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
             Close();
-        }
+            }
 
         private void LoadImageButton_Click(object sender, RoutedEventArgs e)
         {
-            var ofd = new OpenFileDialog();
+            var ofd = new OpenFileDialog { Filter = "ИЗОБРАЖЕНИЯ | *.png; *.bmp"};//{ Filter = "ИЗОБРАЖЕНИЯ | *.png; *.jpg"};
 
             if (ofd.ShowDialog() == true)
             {
