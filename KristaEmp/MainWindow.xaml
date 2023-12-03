@@ -86,6 +86,7 @@
                 Margin="15 5"
                 Background="DimGray"
                 BorderThickness="0"
+                SelectionChanged="EmpListView_SelectionChanged"
                 MouseDoubleClick="EmpListView_MouseDoubleClick">
                 <ListView.ItemTemplate>
                     <DataTemplate>
