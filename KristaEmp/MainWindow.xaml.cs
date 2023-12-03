@@ -1,7 +1,10 @@
 ﻿using KristaEmp.Data;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -32,10 +35,14 @@ namespace KristaEmp
 
 
         private int _curPageIndex = 0;
-        private const int PAGE_LEN = 2;
+        private readonly int PAGE_LEN;
         public MainWindow()
         {
             InitializeComponent();
+
+            string obj = File.ReadAllText($"{AppDomain.CurrentDomain.BaseDirectory}\\..\\..\\config.json");
+            dynamic config = JsonConvert.DeserializeObject(obj);
+            PAGE_LEN = config.PAGE_LEN;
 
             _namesEmp = Core.GetContext().Employee.ToList();
 
