@@ -191,7 +191,9 @@ namespace KristaEmp
         {
             if (EmpListView.SelectedIndex >= 0)
             {
-                Core.GetContext().Employee.Remove(Core.GetContext().Employee.ToList().First(item => item.Id == (EmpListView.SelectedItem as Employee).Id));
+                foreach (var selectedItem in EmpListView.SelectedItems)
+                    Core.GetContext().Employee.Remove(selectedItem as Employee);
+
                 Core.GetContext().SaveChanges();
             }
 
@@ -212,7 +214,22 @@ namespace KristaEmp
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Core.GetContext().SaveChanges();
+            try
+            {
+                Core.GetContext().SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"При сохранении данных произошла ошибка:\n{ex.Message}", "Ошибка...");
+            }
+        }
+
+        private void EmpListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (EmpListView.SelectedItems.Count > 1)
+                EmpDelButton.Content = ((string)EmpDelButton.Content).Replace("сотрудника", "сотрудников");
+            else
+                EmpDelButton.Content = ((string)EmpDelButton.Content).Replace("сотрудников", "сотрудника");
         }
     }
 
