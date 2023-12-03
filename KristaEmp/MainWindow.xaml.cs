@@ -191,6 +191,7 @@ namespace KristaEmp
         {
             var wind = new EmployeeWindow();
             wind.Closed += EmpWindow_Closed;
+            Hide();
             wind.Show();
         }
 
