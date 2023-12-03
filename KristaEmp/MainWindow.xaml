@@ -21,7 +21,7 @@
             <DockPanel Grid.Row="0">
                 <Image
                     x:Name="LogoImage"
-                    Source="Resources/Logo.jpg"
+                    Source="/Resources/Logo.bmp"
                     Margin="15"
                     Width="100"
                     Height="70"
