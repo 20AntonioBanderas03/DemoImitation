@@ -1,0 +1,141 @@
+﻿<Window x:Class="KristaEmp.EmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KristaEmp"
+        mc:Ignorable="d"
+        Title="НПО Криста сотрудники" Height="450" Width="636"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+
+        <Style TargetType="StackPanel">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="5 0"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="FontSize" Value="22"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="5 0"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Background="DimGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <Grid  
+            Background="MediumPurple"
+            Margin="20,10,20,10">
+            <DockPanel 
+                Grid.Row="0"
+                VerticalAlignment="Center">
+                <Image
+                    Source="Resources\\Logo.jpg"
+                    Margin="5 0"
+                    Width="80"
+                    Height="60"
+                    DockPanel.Dock="Left"
+                />
+
+                <TextBlock 
+                    Text="НПО Криста сотрудники"
+                    FontSize="40"
+                    VerticalAlignment="Center"
+                    FontWeight="Bold"
+                    Foreground="White"/>
+            </DockPanel>
+        </Grid>
+        <Grid 
+            Grid.Row="1"
+            Margin="20,0,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel 
+                    Orientation="Vertical">
+                
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="TitleLabel" Content="Добавление сотрудника"
+                           FontSize="22"
+                           Margin="0"
+                           Foreground="White"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Id:"/>
+                    <TextBox x:Name="EmpIdTextBox" IsReadOnly="True"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Name:"/>
+                    <TextBox x:Name="EmpNameTextBox"/>
+                </StackPanel>
+
+
+            </StackPanel>
+            <StackPanel Name="Stack"
+                Grid.Column="1"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right">
+                <Label 
+                        Content="Image:"
+                        VerticalAlignment="Top"/>
+
+                <Border
+                    BorderBrush="Black"
+                    BorderThickness="3"
+                    VerticalAlignment="Top"
+                    Width="200"
+                    Height="200">
+                    <Image x:Name="EmpImage" Stretch="Fill"/>
+                </Border>
+            </StackPanel>
+        </Grid>
+
+        <DockPanel
+            Margin="20 0"
+            Grid.Row="2">
+            
+            <Button 
+                x:Name="SaveEmployeeButton" 
+                Content="Сохранить"
+                DockPanel.Dock="Left"
+                Foreground="White"
+                Background="MediumPurple" Click="SaveEmployeeButton_Click"/>
+
+            <Button 
+                x:Name="LoadImageButton" 
+                Content="Загрузить фото"
+                DockPanel.Dock="Right"
+                Foreground="White"
+                Background="MediumPurple" Click="LoadImageButton_Click"/>
+
+            <Button 
+                x:Name="DeleteImageButton" 
+                Content="Удалить фото"
+                Width="Auto"
+                Foreground="White"
+                Background="MediumPurple" Click="DeleteImageButton_Click" />
+        </DockPanel>
+    </Grid>
+</Window>
