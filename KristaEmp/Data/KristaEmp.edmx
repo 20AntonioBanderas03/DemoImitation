@@ -12,6 +12,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameEmp" Type="nchar" MaxLength="20" />
           <Property Name="ImageName" Type="nchar" MaxLength="20" />
+          <Property Name="Salary" Type="real" />
         </EntityType>
         <EntityContainer Name="Хранилище KristaEmpModelContainer">
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
@@ -28,6 +29,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameEmp" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="ImageName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Salary" Type="Single" />
         </EntityType>
         <EntityContainer Name="KristaEmpEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Employee" EntityType="Self.Employee" />
@@ -44,6 +46,7 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="NameEmp" ColumnName="NameEmp" />
                 <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

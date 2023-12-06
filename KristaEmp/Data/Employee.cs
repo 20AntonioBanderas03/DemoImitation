@@ -17,5 +17,6 @@ namespace KristaEmp.Data
         public int Id { get; set; }
         public string NameEmp { get; set; }
         public string ImageName { get; set; }
+        public Nullable<float> Salary { get; set; }
     }
 }

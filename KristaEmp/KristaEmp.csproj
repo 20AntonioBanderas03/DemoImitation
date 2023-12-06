@@ -130,11 +130,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="config.json" />
     <EntityDeploy Include="Data\KristaEmp.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>KristaEmp.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="config.json" />
     <None Include="Data\KristaEmp.edmx.diagram">
       <DependentUpon>KristaEmp.edmx</DependentUpon>
     </None>
@@ -196,6 +196,14 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Logo.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Data\KristaEmp.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>KristaEmp.edmx</DependentUpon>
@@ -206,12 +214,6 @@
       <DependentUpon>KristaEmp.edmx</DependentUpon>
       <LastGenOutput>KristaEmp.cs</LastGenOutput>
     </Content>
-    <Resource Include="Resources\Logo.bmp">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

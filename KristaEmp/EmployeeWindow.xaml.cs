@@ -4,6 +4,7 @@ using System;
 using System.Data.Entity.Migrations;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 namespace KristaEmp
@@ -29,8 +30,12 @@ namespace KristaEmp
 
                 _curEmp = employee;
                 _imgName = employee.ImageName;
+
+
                 EmpIdTextBox.Text = employee.Id.ToString();
                 EmpNameTextBox.Text = employee.NameEmp;
+                EmpSalaryTextBox.Text = employee.Salary.ToString();
+
                 EmpImage.Source = new BitmapImage(new Uri(employee.ImgPath, UriKind.Absolute));
             }
             else
@@ -46,6 +51,9 @@ namespace KristaEmp
             _curEmp.NameEmp = EmpNameTextBox.Text.Trim();
             _curEmp.ImgPath = _imgName;
 
+            float tempSalary;
+            
+
             Core.GetContext().Employee.AddOrUpdate(_curEmp);
 
             try 
@@ -59,7 +67,26 @@ namespace KristaEmp
 
 
             Close();
+        }
+
+        private bool GetValueOrDefaultFromTextBox(float? _default, TextBox tb)
+        {
+            float? salary = null;
+
+            try
+            {
+                if(string.IsNullOrWhiteSpace(tb.Text))
+
+                salary = float.Parse(tb.Text);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"При сохранении поля 'Salary' произошла ошибка:\n{ex.Message}\nДанные не сохранены...");
+                return false;
+            }
+
+            return true;
+        }
 
         private void LoadImageButton_Click(object sender, RoutedEventArgs e)
         {

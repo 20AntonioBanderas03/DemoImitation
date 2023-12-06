@@ -86,28 +86,23 @@
                     Grid.Column="1"
                     Margin="0 40 0 0"
                     Orientation="Vertical">
-                
-                <StackPanel Orientation="Horizontal" Margin="0 7 0 0">
-                    <TextBox x:Name="EmpIdTextBox" Width="70" IsReadOnly="True"/>
-                </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
-                    <TextBox x:Name="EmpNameTextBox"/>
-                </StackPanel>
+                <TextBox x:Name="EmpIdTextBox" Margin="0 0 0 7" Width="75" IsReadOnly="True" HorizontalAlignment="Left"/>
+
+                <TextBox x:Name="EmpNameTextBox" Margin="0 0 0 7" HorizontalAlignment="Left"/>
+
+                <TextBox x:Name="EmpSalaryTextBox" Width="75" HorizontalAlignment="Left"/>
             </StackPanel>
 
             <StackPanel 
                     Margin="0 40 0 0"
                     Orientation="Vertical">
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Label Content="Id:"/>
-                </StackPanel>
+                <Label Content="Id:"/>
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Label Content="Name:"/>
-                </StackPanel>
-
+                <Label Content="Name:"/>
+                
+                <Label Content="Salary:"/>
 
             </StackPanel>
 
@@ -133,7 +128,7 @@
         <DockPanel
             Margin="20 0"
             Grid.Row="2">
-            
+
             <Button 
                 x:Name="SaveEmployeeButton" 
                 Content="Сохранить"
